@@ -47,13 +47,22 @@ export function VideoModal({ videoSrc, thumbnailSrc }: VideoModalProps) {
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="w-full max-w-5xl aspect-video p-4">
-              <video 
-                src={videoSrc} 
-                autoPlay 
-                controls 
-                className="w-full h-full object-contain rounded-lg shadow-2xl"
-              />
+            <div className="w-full max-w-5xl aspect-video p-4 rounded-lg shadow-2xl overflow-hidden">
+              {videoSrc.includes("drive.google.com") ? (
+                <iframe 
+                  src={videoSrc} 
+                  className="w-full h-full border-0" 
+                  allow="autoplay"
+                  allowFullScreen
+                />
+              ) : (
+                <video 
+                  src={videoSrc} 
+                  autoPlay 
+                  controls 
+                  className="w-full h-full object-contain"
+                />
+              )}
             </div>
           </motion.div>
         )}

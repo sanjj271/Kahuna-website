@@ -108,7 +108,7 @@ export const siteContent = {
     "/assets/images/Gallery/DSC_5139.JPG",
   ],
   visualStory: {
-    videoSrc: "/assets/videos/NGIT%20Skill%20Resort%20.mp4",
+    videoSrc: "https://drive.google.com/file/d/1C_RiHrMnyrgrTLa_Xxgd3IsWiFJcZC2n/preview",
     thumbnail: "assets/images/DSC_5132.JPG"
   },
   location: {
