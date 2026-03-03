@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kahuna Resort — Find Your Shore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Kahuna Resort — luxury, sun, sea. Explore rooms, gallery, and book your stay." />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="logo" href="#hero"><img src="assets/logo.png" alt="Kahuna logo" /></a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#stay">Stay</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="cta" href="#book">Book</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero" data-parallax>
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/hero.jpg">
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay container">
+          <img class="hero-logo" src="assets/logo.png" alt="Kahuna logo" />
+          <h1 class="hero-title">Kahuna</h1>
+          <p class="hero-sub">Find your shore — sun, surf and serene stays</p>
+          <a class="hero-btn" href="#gallery">Explore</a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <section id="about" class="panel about container">
+        <div class="about-grid">
+          <div class="about-media">
+            <img src="assets/about.jpg" alt="Resort view" loading="lazy">
+          </div>
+          <div class="about-text">
+            <h2>Welcome to Kahuna</h2>
+            <p>Nestled on a private shoreline, Kahuna blends modern design with aloha warmth. Enjoy handcrafted meals, oceanfront rooms, and curated experiences to reconnect with the sea.</p>
+            <ul class="amenities">
+              <li>Ocean-view suites</li>
+              <li>Beachside dining</li>
+              <li>Spa & yoga pavilion</li>
+              <li>Water activities & excursions</li>
+            </ul>
+            <a class="link-more" href="#stay">See rooms & rates →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="panel gallery container">
+        <h2>Gallery</h2>
+        <p class="muted">Moments from around Kahuna — click to enlarge</p>
+        <div class="grid">
+          <button class="media-card" data-src="assets/photo1.jpg"><img src="assets/photo1.jpg" alt="photo 1" loading="lazy"></button>
+          <button class="media-card" data-src="assets/photo2.jpg"><img src="assets/photo2.jpg" alt="photo 2" loading="lazy"></button>
+          <button class="media-card" data-src="assets/photo3.jpg"><img src="assets/photo3.jpg" alt="photo 3" loading="lazy"></button>
+          <button class="media-card" data-src="assets/photo4.jpg"><img src="assets/photo4.jpg" alt="photo 4" loading="lazy"></button>
+          <button class="media-card" data-video="assets/resort-tour.mp4"><img src="assets/photo5.jpg" alt="video thumbnail" loading="lazy"><span class="play">▶</span></button>
+        </div>
+      </section>
+
+      <section id="stay" class="panel stay container">
+        <h2>Rooms & Suites</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="assets/room1.jpg" alt="suite" loading="lazy">
+            <div class="card-body">
+              <h3>Ocean Suite</h3>
+              <p>Sunrise views, king bed, private balcony.</p>
+              <a class="btn" href="#book">Book now</a>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/room2.jpg" alt="room" loading="lazy">
+            <div class="card-body">
+              <h3>Garden Room</h3>
+              <p>Cozy, steps from the spa and garden paths.</p>
+              <a class="btn" href="#book">Book now</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="panel contact container">
+        <div class="contact-grid">
+          <div>
+            <h2>Get in touch</h2>
+            <p>Email: hello@kahuna.example</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Shoreline Drive</p>
+          </div>
+          <form id="book" class="contact-form" action="#" onsubmit="return false;">
+            <label>
+              Name
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              Dates
+              <input type="text" name="dates" placeholder="Arrival — Departure">
+            </label>
+            <button class="btn primary" type="submit">Request Booking</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close">✕</button>
+      <img class="lightbox-img" alt="">
+      <video class="lightbox-video" controls></video>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Kahuna Resort — Find Your Shore</p>
+        <p class="muted">Inspired by modern, aesthetic designs — see credits in README</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
