@@ -121,7 +121,7 @@ export const siteContent = {
   contact: {
     title: "Contact Us",
     email: "info@kahuna.in",
-    phone: "+91 9769234079",
+    phone: "+91 8985607288",
     cta: "Contact Now",
   },
 };
