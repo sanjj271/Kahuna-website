@@ -1,48 +1,37 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { siteContent } from "@/content/site";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 export function HorizontalGallery() {
-  const targetRef = React.useRef<HTMLDivElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
-
   return (
     <section 
-      ref={targetRef} 
       id="gallery" 
-      className="relative h-[300vh] bg-background border-y border-border"
+      className="relative bg-background border-y border-border py-20 md:py-32 overflow-hidden"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        
-        {/* Gallery Intro Label */}
-        <div className="absolute top-24 md:top-32 left-8 md:left-16 z-10">
-          <h2 className="text-sm md:text-base uppercase tracking-widest text-primary font-bold">The Archives</h2>
-        </div>
+      <div className="container mx-auto px-4 md:px-8 mb-8 md:mb-12">
+        <h2 className="text-sm md:text-base uppercase tracking-widest text-primary font-bold">The Archives</h2>
+      </div>
 
-        <motion.div style={{ x }} className="flex gap-8 px-8 md:px-16">
-          {siteContent.gallery.map((src, index) => (
-            <div 
-              key={index}
-              className={`relative h-[50vh] min-w-[70vw] md:min-w-[40vw] overflow-hidden rounded-xl border border-border ${
-                index % 2 === 0 ? "self-end mb-24" : "self-start mt-24"
-              }`}
-            >
-              <img 
-                src={src} 
-                alt={`Gallery image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors duration-500" />
-            </div>
-          ))}
-        </motion.div>
+      <div className="flex gap-4 md:gap-8 px-4 md:px-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-12 cursor-grab active:cursor-grabbing">
+        {siteContent.gallery.map((src, index) => (
+          <div 
+            key={index}
+            className={`relative h-[40vh] md:h-[50vh] min-w-[85vw] md:min-w-[40vw] shrink-0 snap-center overflow-hidden rounded-xl border border-border ${
+              index % 2 === 0 ? "mt-0 md:mt-16" : "mt-8 md:mt-0"
+            }`}
+          >
+            <Image 
+              src={src} 
+              alt={`Gallery image ${index + 1}`}
+              fill
+              sizes="(max-width: 768px) 85vw, 40vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors duration-500" />
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
@@ -29,16 +30,22 @@ export function About() {
 
         {/* Abstract/Atmospheric image side */}
         <div className="relative aspect-[4/5] w-full overflow-hidden border-premium rounded-2xl">
-          <motion.img 
+          <motion.div
             initial={{ scale: 1.2 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            src={siteContent.about.image} 
-            alt="Kahuna Resort Sanctuary"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
+            className="absolute inset-0 w-full h-full"
+          >
+            <Image 
+              src={siteContent.about.image} 
+              alt="Kahuna Resort Sanctuary"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </motion.div>
+          <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
         </div>
       </div>
     </Section>

@@ -9,7 +9,7 @@ export const siteContent = {
   about: {
     title: "A Sanctuary for Learners",
     description:
-      "Kahuna is an exploration of raw beauty and refined comfort, shaped for curious minds and independent spirits. Seamlessly woven into the untamed landscape, it invites a rhythm of focus, creativity, and quiet connection. A place where ideas unfold naturally and life moves with the tide,right on the beach.",
+      "Kahuna is an exploration of raw beauty and refined comfort, shaped for curious minds and independent spirits. It invites a rhythm of focus, creativity, and quiet connection. A place where ideas unfold naturally and life moves with the tide,right on the beach.",
     image: "/assets/images/Generic/DSC_5004.JPG",
   },
   amenities: {

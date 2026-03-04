@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
@@ -40,10 +41,12 @@ export function Amenities() {
                       "-mb-4 ml-2"
                     }`}
                   >
-                    <img 
+                    <Image 
                       src={img} 
                       alt={`${item.name} ${i + 1}`} 
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-1000 group-hover/img:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover/img:bg-transparent transition-colors duration-500" />
                   </div>

@@ -6,9 +6,10 @@ import { Section } from "@/components/ui/Section";
 
 export function Location() {
   return (
-    <section className="relative w-full h-[800px] md:h-[900px] bg-muted overflow-hidden">
-      {/* Full-width Interactive Map */}
-      <div className="absolute inset-0 z-0 group">
+    <section className="relative w-full bg-background md:bg-transparent md:h-[900px] flex flex-col md:block overflow-hidden">
+      
+      {/* Mobile Map Header (Visible only on mobile) */}
+      <div className="w-full h-[50vh] md:hidden relative group">
         <div className="absolute inset-0 pointer-events-none bg-primary/20 mix-blend-overlay z-10 transition-opacity duration-1000 group-hover:opacity-0" />
         <iframe 
           src={siteContent.location.mapEmbedUrl}
@@ -22,9 +23,25 @@ export function Location() {
         />
       </div>
 
-      {/* Floating Glass Card */}
-      <div className="absolute inset-0 z-20 container mx-auto px-4 md:px-8 flex items-center md:items-end justify-center md:justify-start pb-0 md:pb-24 pointer-events-none">
-        <div className="bg-white/95 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] max-w-[420px] w-full pointer-events-auto border border-white/50 flex flex-col space-y-10 transform translate-y-4 md:translate-y-0">
+      {/* Desktop Full-width Map (Hidden on mobile) */}
+      <div className="hidden md:block absolute inset-0 z-0 group">
+        <div className="absolute inset-0 pointer-events-none bg-primary/20 mix-blend-overlay z-10 transition-opacity duration-1000 group-hover:opacity-0" />
+        <iframe 
+          src={siteContent.location.mapEmbedUrl}
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen={false} 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          className="w-full h-full grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+        />
+      </div>
+
+      {/* Glass Card Container */}
+      <div className="relative md:absolute md:inset-0 z-20 w-full md:container md:mx-auto md:px-8 flex items-end justify-start md:pb-24 pointer-events-none">
+        
+        <div className="bg-white md:bg-white/95 md:backdrop-blur-xl p-8 md:p-12 md:rounded-3xl shadow-none md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] max-w-full md:max-w-[420px] w-full pointer-events-auto border-t md:border border-border/50 md:border-white/50 flex flex-col space-y-10">
           
           {/* Location Details */}
           <div className="flex flex-col space-y-4">
