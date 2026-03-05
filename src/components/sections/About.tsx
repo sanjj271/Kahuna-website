@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
@@ -9,7 +10,7 @@ export function About() {
   return (
     <Section id="resort" className="bg-background relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
-        
+
         {/* Typographic side */}
         <div className="flex flex-col justify-center space-y-8">
           <motion.div
@@ -36,10 +37,13 @@ export function About() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full"
           >
-            <img 
-              src={siteContent.about.image} 
+            <Image
+              src={siteContent.about.image}
               alt="Kahuna Resort Sanctuary"
-              className="w-full h-full object-cover"
+              fill
+              loading="lazy"
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
           <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
