@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
@@ -37,12 +36,10 @@ export function About() {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full"
           >
-            <Image 
+            <img 
               src={siteContent.about.image} 
               alt="Kahuna Resort Sanctuary"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </motion.div>
           <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />

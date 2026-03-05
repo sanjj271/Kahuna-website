@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { siteContent } from "@/content/site";
 import { Button } from "@/components/ui/Button";
@@ -19,13 +18,10 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
-        <Image
+        <img
           src={siteContent.hero.backgroundImage}
           alt="Kahuna Resort Hero"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
+          className="w-full h-full object-cover"
         />
       </motion.div>
 

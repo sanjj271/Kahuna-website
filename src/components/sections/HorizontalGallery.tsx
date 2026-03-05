@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { siteContent } from "@/content/site";
 
 export function HorizontalGallery() {
@@ -22,12 +21,10 @@ export function HorizontalGallery() {
               index % 2 === 0 ? "mt-0 md:mt-16" : "mt-8 md:mt-0"
             }`}
           >
-            <Image 
+            <img 
               src={src} 
               alt={`Gallery image ${index + 1}`}
-              fill
-              sizes="(max-width: 768px) 85vw, 40vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors duration-500" />
           </div>
