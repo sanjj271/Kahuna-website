@@ -31,10 +31,10 @@ export const siteContent = {
         name: "Lounge",
         description: "Unwind, socialize, and enjoy breathtaking sunsets in our premium beachside lounge area.",
         images: [
-          "/assets/images/Lounge%20/DSC_5167.JPG",
-          "/assets/images/Lounge%20/DSC_5177.JPG",
-          "/assets/images/Lounge%20/DSC_5181.JPG",
-          "/assets/images/Lounge%20/DSC_5186.JPG"
+          "/assets/images/Lounge/DSC_5167.JPG",
+          "/assets/images/Lounge/DSC_5177.JPG",
+          "/assets/images/Lounge/DSC_5181.JPG",
+          "/assets/images/Lounge/DSC_5186.JPG"
         ],
       },
       {
