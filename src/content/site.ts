@@ -108,7 +108,7 @@ export const siteContent = {
     "/assets/images/Gallery/DSC_5139.JPG",
   ],
   visualStory: {
-    videoSrc: "https://drive.google.com/file/d/1C_RiHrMnyrgrTLa_Xxgd3IsWiFJcZC2n/preview",
+    videoSrc: "https://drive.google.com/file/d/1j5_M3jF1na6xFEn5liaeqnCHt7t4UI15/preview",
     thumbnail: "assets/images/DSC_5132.JPG"
   },
   location: {
